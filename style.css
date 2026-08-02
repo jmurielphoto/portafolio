@@ -1,0 +1,31 @@
+body {
+    background: #faf8f5;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+header h1 {
+    text-align: center;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.hero img {
+    max-width: 90%;
+    height: auto;
+}
+
+.gallery {
+    columns: 3 280px;
+    column-gap: 16px;
+}
+
+.gallery img {
+    width: 100%;
+    margin: 0 0 16px;
+    display: block;
+}
