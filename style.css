@@ -1,31 +1,433 @@
-body {
-    background: #faf8f5;
-    font-family: Arial, sans-serif;
+/* Estilos globales y reseteo */
+* {
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-header h1 {
-    text-align: center;
+body {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
 }
 
-.hero {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.hero img {
-    max-width: 90%;
-    height: auto;
-}
-
-.gallery {
-    columns: 3 280px;
-    column-gap: 16px;
-}
-
-.gallery img {
+/* Header de navegación */
+.main-header {
+    position: fixed;
+    top: 0;
     width: 100%;
-    margin: 0 0 16px;
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #0d0d0d;
+}
+
+nav a {
+    color: #555555;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #000000;
+}
+
+/* Sección Hero */
+.hero {
+    margin-top: 80px;
+    padding: 20px 40px;
+    text-align: center;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    max-height: 70vh;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    padding: 12px;
+    border: 1px solid #eaeaea;
+}
+
+.hero-image-wrapper img {
+    width: 100%;
+    height: calc(70vh - 24px);
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform 0.6s ease;
+}
+
+.hero-image-wrapper:hover img {
+    transform: scale(1.01);
+}
+
+.hero-overlay {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 85%;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.hero-overlay h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #ffffff;
+    letter-spacing: 2px;
+}
+
+.hero-overlay .subtitle {
+    font-size: 1.05rem;
+    letter-spacing: 2px;
+    color: #f3f3f3;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+/* Sección Galería en Cuadrícula */
+.gallery-container {
+    max-width: 1200px;
+    margin: 70px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 45px;
+    color: #1a1a1a;
+    letter-spacing: 1px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #ffffff;
+    padding: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid #eeeeee;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.img-bg-container {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background-color: #ffffff;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: #ffffff;
+    transition: transform 0.5s ease;
+}
+
+.item-overlay {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    background: rgba(255, 255, 255, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    border-radius: 4px;
+    transition: opacity 0.3s ease;
+}
+
+.item-overlay span {
+    color: #1a1a1a;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1px solid #1a1a1a;
+    padding: 10px 22px;
+    border-radius: 4px;
+    font-weight: 600;
+    background: #ffffff;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.04);
+}
+
+.gallery-item:hover .item-overlay {
+    opacity: 1;
+}
+
+/* Sección Sobre mí */
+.about-section {
+    background-color: #fafafa;
+    padding: 80px 20px;
+    text-align: center;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.about-content {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.about-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    color: #1a1a1a;
+}
+
+.about-content p {
+    color: #444444;
+    font-size: 1.05rem;
+    margin-bottom: 18px;
+    line-height: 1.7;
+}
+
+.about-note {
+    font-size: 0.9rem !important;
+    color: #777777 !important;
+    margin-top: 25px;
+}
+
+/* Sección Servicios */
+.services-section {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: #ffffff;
+    padding: 35px 25px;
+    border-radius: 8px;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+.service-card p {
+    color: #666666;
+    font-size: 0.95rem;
+}
+
+/* Sección Contacto */
+.contact-section {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #fafafa;
+    border-top: 1px solid #f0f0f0;
+}
+
+.contact-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+}
+
+.contact-section p {
+    color: #666666;
+    margin-bottom: 15px;
+}
+
+.contact-info {
+    margin-bottom: 25px;
+}
+
+.phone-number {
+    font-size: 1.1rem;
+    color: #1a1a1a;
+}
+
+.phone-number a {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.phone-number a:hover {
+    text-decoration: underline;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #333333;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #1a1a1a;
+    border: 1px solid #1a1a1a;
+}
+
+.btn-outline:hover {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+/* Footer */
+footer {
+    padding: 30px 20px;
+    text-align: center;
+    background-color: #ffffff;
+    color: #888888;
+    font-size: 0.85rem;
+    border-top: 1px solid #eeeeee;
+}
+
+/* Lightbox Modal */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.97);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 2000;
+}
+
+.lightbox.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-white-frame {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+    border: 1px solid #eaeaea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    max-width: 85vw;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+
+.close-btn {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    color: #1a1a1a;
+    font-size: 40px;
+    cursor: pointer;
+    font-weight: 300;
+}
+
+/* Adaptación Móvil */
+@media (max-width: 768px) {
+    .main-header {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav a {
+        margin: 0 8px;
+        font-size: 0.75rem;
+    }
+
+    .hero-overlay h1 {
+        font-size: 2rem;
+    }
+
+    .hero-overlay .subtitle {
+        font-size: 0.85rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
 }
