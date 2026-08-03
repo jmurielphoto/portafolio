@@ -17,7 +17,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    padding: 30px 50px;
     background-color: #000000;
     border-bottom: 1px solid #222222;
 }
@@ -32,7 +32,7 @@ body {
 }
 
 .logo img {
-    height: 80px; /* Aumentado de 45px a 80px para que se vea mucho mejor y más grande */
+    height: 140px; /* Tamaño grande y protagonista como en la referencia */
     width: auto;
     display: block;
 }
@@ -40,8 +40,9 @@ body {
 .main-header nav a {
     color: #ffffff;
     text-decoration: none;
-    margin-left: 20px;
-    font-size: 0.9rem;
+    margin-left: 25px;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
     transition: opacity 0.3s;
 }
 
