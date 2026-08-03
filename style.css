@@ -12,12 +12,12 @@ body {
     box-sizing: inherit;
 }
 
-/* Header con logo ajustado mediante filtro si es negro sobre fondo oscuro */
+/* Header con logo maximizado para contrarrestar los márgenes internos de la imagen */
 .main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
+    padding: 20px 40px;
     background-color: #000000;
     border-bottom: 1px solid #222222;
 }
@@ -25,7 +25,8 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    height: 65px; 
+    height: 70px;
+    overflow: hidden; /* Esto ayuda a contener la escala */
 }
 
 .logo a {
@@ -35,12 +36,14 @@ body {
 }
 
 .logo img {
-    height: 100%; 
+    height: 140px; /* Duplicamos la altura para superar el espacio vacío del archivo */
     width: auto;
     object-fit: contain;
     display: block;
-    /* Al ser la firma negra sobre fondo gris/oscuro, invertimos el color para que el texto quede blanco brillante sobre el fondo negro de la web */
-    filter: invert(1) brightness(2);
+    /* Escalado y brillo máximo para que se vea grande, clara y resplandeciente sobre el fondo negro */
+    transform: scale(1.8);
+    transform-origin: left center;
+    filter: brightness(2.5);
 }
 
 .main-header nav {
@@ -311,5 +314,43 @@ footer {
 
 /* Lightbox */
 .lightbox {
-    position: full; /* solo un placeholder mental */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-white-frame {
+    padding: 10px;
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.lightbox-content {
+    max-width: 80vw;
+    max-height: 80vh;
+    display: block;
+}
+
+.close-btn {
+    position: absolute;
+    top: 35px;
+    right: 40px;
+    font-size: 3rem;
+    color: #ffffff;
+    cursor: pointer;
 }
