@@ -12,12 +12,12 @@ body {
     box-sizing: inherit;
 }
 
-/* Header con logo maximizado para contrarrestar los márgenes internos de la imagen */
+/* Header con tipografía Great Vibes (firma fluida muy estilizada) */
 .main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    padding: 15px 40px;
     background-color: #000000;
     border-bottom: 1px solid #222222;
 }
@@ -25,25 +25,20 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    height: 70px;
-    overflow: hidden; /* Esto ayuda a contener la escala */
 }
 
-.logo a {
-    display: flex;
-    align-items: center;
-    height: 100%;
+.logo-signature {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.2rem;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    line-height: 1;
+    transition: opacity 0.3s;
 }
 
-.logo img {
-    height: 140px; /* Duplicamos la altura para superar el espacio vacío del archivo */
-    width: auto;
-    object-fit: contain;
-    display: block;
-    /* Escalado y brillo máximo para que se vea grande, clara y resplandeciente sobre el fondo negro */
-    transform: scale(1.8);
-    transform-origin: left center;
-    filter: brightness(2.5);
+.logo-signature:hover {
+    opacity: 0.8;
 }
 
 .main-header nav {
@@ -323,7 +318,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index:000;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
