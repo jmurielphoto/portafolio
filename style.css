@@ -18,12 +18,18 @@ body {
 }
 
 .logo {
-    /* Tipografía personalizada para el logo. Puedes cambiar 'Cinzel' por la fuente que desees o añadir tu @font-face */
-    font-family: 'Cinzel', 'Playfair Display', serif;
-    font-size: 1.6rem;
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+}
+
+.logo a {
+    display: inline-block;
+}
+
+.logo img {
+    height: 45px; /* Altura perfecta para que se vea como tu firma en la esquina superior */
+    width: auto;
+    display: block;
 }
 
 .main-header nav a {
@@ -323,7 +329,6 @@ footer {
 }
 
 .close-btn {
-    position: set;
     position: absolute;
     top: 30px;
     right: 40px;
