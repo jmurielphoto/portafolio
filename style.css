@@ -1,3 +1,8 @@
+@font-face {
+    font-family:'Carolina Hills';
+    src:url('Carolina Hills Personal Use.ttf') format('truetype');
+}
+
 /* Estilos globales y reseteo */
 * {
     margin: 0;
@@ -29,11 +34,10 @@ body {
 }
 
 .logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    color: #111111;
+    font-family:'Carolina Hills', cursive;
+    font-size:3.2rem;
+    color:#111;
+    letter-spacing:0;
 }
 
 nav a {
