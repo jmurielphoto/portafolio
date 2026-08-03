@@ -17,7 +17,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 50px;
+    padding: 20px 40px;
     background-color: #000000;
     border-bottom: 1px solid #222222;
 }
@@ -29,12 +29,16 @@ body {
 
 .logo a {
     display: inline-block;
+    line-height: 0;
 }
 
 .logo img {
-    height: 140px; /* Tamaño grande y protagonista como en la referencia */
+    height: 180px; /* Forzamos un tamaño máximo imponente */
     width: auto;
     display: block;
+    /* Si la imagen en sí tiene espacios transparentes grandes alrededor, esto lo compensa */
+    transform: scale(1.3); 
+    transform-origin: left center;
 }
 
 .main-header nav a {
