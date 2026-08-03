@@ -32,7 +32,7 @@ body {
 }
 
 .logo img {
-    height: 45px;
+    height: 80px; /* Aumentado de 45px a 80px para que se vea mucho mejor y más grande */
     width: auto;
     display: block;
 }
