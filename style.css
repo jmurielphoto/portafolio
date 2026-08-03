@@ -5,6 +5,11 @@ body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
 /* Header */
@@ -27,7 +32,7 @@ body {
 }
 
 .logo img {
-    height: 45px; /* Altura perfecta para que se vea como tu firma en la esquina superior */
+    height: 45px;
     width: auto;
     display: block;
 }
@@ -66,8 +71,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border: 6px solid #ffffff; /* Borde blanco solicitado */
-    box-sizing: border-box;
+    border: 6px solid #ffffff;
 }
 
 .hero-overlay {
@@ -127,8 +131,7 @@ body {
     width: 100%;
     height: 350px;
     object-fit: cover;
-    border: 6px solid #ffffff; /* Borde blanco solicitado en las fotos de la galería */
-    box-sizing: border-box;
+    border: 6px solid #ffffff;
     display: block;
     background-color: #ffffff;
 }
@@ -318,7 +321,7 @@ footer {
 
 .lightbox-white-frame {
     padding: 10px;
-    background: #ffffff; /* Marco blanco contenedor en lightbox */
+    background: #ffffff;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
