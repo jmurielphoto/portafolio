@@ -12,12 +12,12 @@ body {
     box-sizing: inherit;
 }
 
-/* Header */
+/* Header con logo ajustado mediante filtro si es negro sobre fondo oscuro */
 .main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    padding: 15px 40px;
     background-color: #000000;
     border-bottom: 1px solid #222222;
 }
@@ -25,20 +25,27 @@ body {
 .logo {
     display: flex;
     align-items: center;
+    height: 65px; 
 }
 
 .logo a {
-    display: inline-block;
-    line-height: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
 .logo img {
-    height: 180px; /* Forzamos un tamaño máximo imponente */
+    height: 100%; 
     width: auto;
+    object-fit: contain;
     display: block;
-    /* Si la imagen en sí tiene espacios transparentes grandes alrededor, esto lo compensa */
-    transform: scale(1.3); 
-    transform-origin: left center;
+    /* Al ser la firma negra sobre fondo gris/oscuro, invertimos el color para que el texto quede blanco brillante sobre el fondo negro de la web */
+    filter: invert(1) brightness(2);
+}
+
+.main-header nav {
+    display: flex;
+    align-items: center;
 }
 
 .main-header nav a {
@@ -304,43 +311,5 @@ footer {
 
 /* Lightbox */
 .lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.95);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-}
-
-.lightbox.active {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.lightbox-white-frame {
-    padding: 10px;
-    background: #ffffff;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-.lightbox-content {
-    max-width: 80vw;
-    max-height: 80vh;
-    display: block;
-}
-
-.close-btn {
-    position: absolute;
-    top: 30px;
-    right: 40px;
-    font-size: 3rem;
-    color: #ffffff;
-    cursor: pointer;
+    position: full; /* solo un placeholder mental */
 }
